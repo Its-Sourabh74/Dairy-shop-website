@@ -1,0 +1,1348 @@
+/* General Reset to Prevent Overflow */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding/margins don't affect width */
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container-fluid, .container {
+    max-width: 100%; /* Ensure containers don't exceed the viewport width */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Fix for sections causing overflow */
+.ftco-section {
+    overflow-x: hidden; /* Prevent horizontal overflow in the section */
+    padding: 4rem 1rem; /* Adjust padding for better spacing */
+}
+
+body {
+    background-color: #007bff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-y: scroll; /* Allow vertical scrolling */
+}
+
+/* Navbar Styling */
+.nav {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center; /* Center items vertically */
+    width: 100%;
+    height: 100px; /* Match the height from login.css */
+    line-height: 100px; /* Align items vertically */
+    z-index: 100;
+    background: #007bff; /* Ensure consistent background color */
+    padding: 0 20px; /* Add padding for spacing */
+}
+
+/* Logo */
+.nav-logo {
+    display: flex;
+    align-items: center; /* Center logo vertically */
+}
+
+.nav-logo img.logo {
+    height: 100px; /* Match the logo size from login.css */
+    margin-right: 20px; /* Space between logo and text */
+    padding-left: 40px; /* Add padding to the left */
+}
+
+/* Navigation Menu */
+.nav-menu ul {
+    display: flex;
+    background: transparent;
+}
+
+.nav-menu ul li {
+    list-style-type: none;
+}
+
+.nav-menu ul li .link {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+
+.link:hover, .active {
+    border-bottom: 2px solid #fff;
+}
+
+/* Navigation Buttons */
+.nav-button .btn {
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.btn:hover {
+    background: #fb925d;
+}
+
+#registerBtn {
+    margin-left: 15px;
+    margin-right: 40px;
+}
+
+.btn.white-btn {
+    background: #ff8400;
+    color: #fff;
+}
+
+.btn.btn.white-btn:hover {
+    background: #ff8400;
+}
+
+/* Hamburger Menu Button */
+.nav-menu-btn {
+    display: none; /* Hidden by default for larger screens */
+    position: absolute;
+    right: 20px; /* Align to the right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for perfect centering */
+    z-index: 101; /* Ensure it stays above other elements */
+}
+
+/* Responsive Styles for Smaller Screens */
+@media only screen and (max-width: 786px) {
+    .nav-button {
+        display: none;
+    }
+
+    .nav-menu.responsive {
+        top: 100px;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: -800px;
+        display: flex;
+        justify-content: center;
+        background: rgba(0, 123, 255, 1); /* Match navbar background */
+        width: 100%;
+        height: 90vh;
+        backdrop-filter: blur(20px); /* Add blur effect */
+        transition: .3s;
+    }
+
+    .nav-menu ul {
+        flex-direction: column; /* Stack menu items vertically */
+        text-align: center;
+    }
+
+    .nav-menu-btn {
+        display: block; /* Show hamburger button */
+        position: absolute;
+        right: 20px; /* Align to the right */
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%); /* Adjust for perfect centering */
+        z-index: 101; /* Ensure it stays above other elements */
+    }
+
+    .nav-menu-btn i {
+        font-size: 25px; /* Match icon size */
+        color: #fff; /* Icon color */
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+        border-radius: 50%; /* Round icon background */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: .3s ease; /* Smooth transition */
+    }
+
+    .nav-menu-btn i:hover {
+        background: rgba(255, 255, 255, 0.15); /* Darker background on hover */
+    }
+
+    .nav-logo img.logo {
+        height: 50px; /* Adjust logo size for smaller screens */
+    }
+}
+
+/* Additional Responsive Styles for Very Small Screens */
+@media only screen and (max-width: 450px) {
+    .nav-logo img.logo {
+        height: 60px; /* Adjust the height for very small screens */
+        padding-left: 30px; /* Add padding to the left */
+    }
+
+    .nav-menu {
+        top: -1200px;
+    }
+
+    .nav-menu-btn {
+        padding-right: 20px;
+    }
+}
+
+/* Footer Section */
+footer {
+    padding: 3rem 0;
+    background-color: #222;
+    color: #fff;
+}
+
+.footer-menu {
+    margin-bottom: 2rem;
+}
+
+.footer-menu img {
+    width: 100%;
+    height: auto;
+}
+
+.footer-menu .social-links {
+    margin-top: 2rem;
+}
+
+.footer-menu .social-links ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 1rem;
+}
+
+.footer-menu .social-links ul li {
+    margin: 0;
+}
+
+.footer-menu .social-links ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #222;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-menu .social-links ul li a:hover {
+    background-color: #ffc43f;
+    color: #fff;
+}
+
+.footer-menu .widget-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.footer-menu .menu-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu .menu-list .menu-item {
+    margin-bottom: 0.5rem;
+}
+
+.footer-menu .menu-list .menu-item a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-menu .menu-list .menu-item a:hover {
+    color: #ffc43f;
+}
+
+.footer-menu form {
+    display: flex;
+    gap: 0;
+}
+
+.footer-menu form .form-control {
+    border: none;
+    border-radius: 0;
+    background-color: #f8f9fa;
+}
+
+.footer-menu form .btn {
+    border: none;
+    border-radius: 0;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-menu form .btn:hover {
+    background-color: #ffc43f;
+    color: #222;
+}
+
+#footer-bottom {
+    background-color: #111;
+    padding: 1rem 0;
+}
+
+#footer-bottom .copyright {
+    color: #fff;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .footer-menu .social-links ul {
+        justify-content: center;
+    }
+
+    #footer-bottom .copyright {
+        text-align: center;
+    }
+}
+
+/* Tabs Section */
+.bootstrap-tabs {
+    margin-top: 50px;
+}
+
+.tabs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: 0px; /* Remove extra space between "Our Products" and slider */
+    margin-bottom: 5px; /* Minimized space below the "Our Products" section */
+    padding: 10px 20px; /* Add padding for a cleaner look */
+    background-color: #f8f9fa; /* Light background for better visibility */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.tabs-header h3 {
+    font-size: 35px; /* Adjust the size as needed */
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.tabs-header nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-tabs {
+    border: none;
+}
+
+.nav-tabs .nav-link {
+    font-size: 14px; /* Adjust the size as needed */
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #555;
+    padding: 10px 15px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+
+.nav-tabs .nav-link.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+
+.tab-content {
+    margin-top: 20px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+/* Product Grid Section */
+.product-grid {
+    display: flex;    
+    flex-wrap: wrap;    
+    gap: 0.5rem; /* Reduced gap between products */
+    padding-left: 0; /* Remove left padding */
+    padding-right: 0; /* Remove right padding */
+    padding-bottom: 0.5rem; /* Reduced padding below the grid */
+    padding-top: 0.5rem; /* Reduced padding above the grid */
+    flex-wrap: center;  
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 400px; /* Adjust the width as needed */
+    font-family: Arial, sans-serif;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.product-details .price {
+    font-size: 24px; /* Larger price font */
+    color: #000; /* Change price text color to black */
+    font-weight: bold;
+}
+
+.product-image {
+    flex-shrink: 0;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-image img {
+    width: 80px; /* Adjust the size as needed */
+    height: 80px; /* Adjust the size as needed */
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.product-qty {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px; /* Add margin to separate from the image */
+}
+
+.product-qty button {
+    border: none;
+    background: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.product-qty input {
+    width: 40px;
+    text-align: center;
+    border: none;
+}
+
+.add-to-cart {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #ff8400;
+    color: #fff;
+}
+
+.product-item h3  {
+    display: block;
+    width: 100%;
+    font-weight: 600; 
+    font-size: 18px;  
+    line-height: 25px;
+    text-transform: capitalize; 
+    color: #333333;
+    margin: 0;
+}
+
+.product-item figure {
+    background: #f9f9f9;
+    border-radius: 12px;
+    text-align: center; 
+}
+
+.product-item figure img { 
+    max-height: 100px;
+    height: auto;
+}
+
+.product-item .btn-wishlist {
+    position: absolute;
+    top: 20px;
+    right: 20px; 
+    width: 50px;  
+    height: 50px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #d8d8d8;
+    transition: all 0.3s ease-out;
+}
+
+.product-item .btn-wishlist:hover {
+    background: rgb(240, 56, 56);
+    color: #fff;
+}
+
+.product-item .qty {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px; 
+    letter-spacing: 0.02em;  
+    text-transform: uppercase;
+}
+
+.product-item .rating {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px; 
+    text-transform: capitalize;  
+    color: #222222;
+}
+
+.product-item .rating svg {
+    color: #ffc43f; /* Gold color for star rating */
+}
+
+.product-item .price  {
+    display: block;
+    width: 100%;
+    font-weight: 600; 
+    font-size: 22px;  
+    line-height: 30px;
+    text-transform: capitalize; 
+    color: #222222;
+}
+
+.product-item .product-qty  {
+    width: 85px;
+}
+
+.product-item .btn-link  {
+    text-decoration: none;
+}
+
+.product-item #quantity {
+    height: auto;
+    width: 28px;
+    text-align: center; 
+    border: none;  
+    margin: 0;
+    padding: 0;
+}
+
+.product-item .btn-number {
+    width: 26px;
+    height: 26px;
+    line-height: 1; 
+    text-align: center;  
+    background: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+    color: #222;
+    padding: 0;
+
+}
+
+.weight-options {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0; /* Add margin to separate from price */
+}
+
+/* Weight Option Buttons */
+.weight-btn {
+    padding: 5px 10px; /* Reduced padding for smaller size */
+    border: 2px solid #007bff; /* Blue border */
+    background-color: #fff; /* White background */
+    color: #007bff; /* Blue text color */
+    border-radius: 15px; /* Smaller rounded corners */
+    font-size: 12px; /* Reduced font size */
+    font-weight: 500; /* Slightly lighter font weight */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 3px; /* Reduced spacing between buttons */
+}
+
+/* Active Button Style */
+.weight-btn.active {
+    background-color: #007bff; /* Blue background for active button */
+    color: #fff; /* White text for active button */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Stronger shadow for active button */
+    transform: scale(1.03); /* Slightly enlarge active button */
+}
+
+/* Hover Effect */
+.weight-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: #fff; /* White text on hover */
+    transform: scale(1.03); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
+}
+
+/* Disabled Button Style (if applicable) */
+.weight-btn:disabled {
+    background-color: #e0e0e0; /* Light gray background */
+    color: #a0a0a0; /* Gray text */
+    border-color: #d0d0d0; /* Gray border */
+    cursor: not-allowed; /* Show not-allowed cursor */
+    box-shadow: none; /* Remove shadow */
+}
+
+/* Filter Buttons Styles */
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Add spacing between buttons */
+    margin-bottom: 5px; /* Minimized space below the filter buttons */
+    margin-top: 5px; /* Minimized space between filter buttons and the slider */
+}
+
+.filter-buttons button {
+    padding: 10px 20px; /* Add padding for better spacing */
+    font-size: 14px; /* Adjust font size */
+    font-weight: 600; /* Make text bold */
+    color: #fff; /* White text color */
+    background-color: #007bff; /* Blue background */
+    border: none; /* Remove border */
+    border-radius: 25px; /* Add rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.filter-buttons button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.filter-buttons button.active {
+    background-color: #ff8400; /* Highlight active button with orange */
+    color: #fff; /* White text for active button */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Add stronger shadow for active button */
+    transform: scale(1.1); /* Slightly enlarge active button */
+}
+
+/* General product styles */
+.product {
+    display: none; /* Hide all products by default */
+}
+
+.product.show {
+    display: block; /* Show products with the 'show' class */
+}
+
+/* Filter buttons styles */
+.filter-buttons button {
+    margin: 10px; /* Reduced margin to lessen the gap between buttons */
+    width: 300px; /* Set width to make buttons square */
+    height: 50px; /* Set height to make buttons square */
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px; /* Adjusted font size to fit within the square buttons */
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-buttons button:hover {
+    background-color: #ff8400;
+    transform: scale(1.05);
+}
+
+.filter-buttons button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #013e80;
+}
+
+/* Search box styles */
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-search {
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all 0.5s ease-in-out;
+    background-color: #007bff;
+    padding-right: 50px;
+    color: #fff;
+}
+
+.input-search::placeholder {
+    color: #ffffff;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+.btn-search {
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color: #fff;
+    background-color: transparent;
+    pointer-events: painted;
+}
+
+.btn-search:focus ~ .input-search,
+.input-search:focus {
+    width: 300px;
+    border-radius: 4px;
+    background-color: #fb925d;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+/* Reduce space between navbar and image slider */
+.slider-container {
+    margin-top: 20px; /* Reduced space between navbar and slider */
+    margin-bottom: 5px; /* Minimized space between slider and product filter */
+    border-radius: 10px; /* Add rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    overflow: hidden; /* Ensure the slider content stays within bounds */
+}
+
+/* Responsive styles for smaller screens */
+@media only screen and (max-width: 450px) {
+    /* Adjust the layout of the tabs header */
+    .tabs-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Adjust the font size and margin of the heading */
+    .tabs-header h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* Adjust the search box to take full width and align to the right */
+    .search-box {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+    }
+
+    .btn-search {
+        padding-right: 5px;
+    }
+
+    /* Adjust the filter buttons to wrap and take full width */
+    .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .filter-buttons button {
+      margin: 4px; /* Reduced margin to lessen the gap between buttons */
+      width: 50px; /* Set width to make buttons square */
+      height: 50px; /* Set height to make buttons square */
+    }
+
+    /* Adjust the filter buttons to take 45% width and add margin */
+    .filter-buttons button {
+        flex: 1 1 1 25%;
+        margin: 10px; /* Reduced margin to lessen the gap between buttons */
+        aspect-ratio: 1 / 1; /* Ensures square shape */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .filter-buttons button:hover {
+      background-color: #ff8400;
+    }
+
+    /* Adjust the product grid to be column-based and center-aligned */
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+        gap: 1rem; /* Reduced gap between products */
+    }
+
+    /* Adjust the product item to be row-based and take full width */
+    .product-item {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 1rem; /* Reduced margin to lessen the gap between products */
+    }
+
+    /* Adjust the product image margin */
+    .product-image {
+        margin-left: 10px; /* Reduced margin */
+        margin-top: 0;
+    }
+
+    /* Remove padding from product details */
+    .product-details {
+        padding-right: 0;
+    }
+
+    .input-search {
+        width: 100%; /* Ensure it fits within the viewport */
+        padding-right: 10px; /* Adjust padding */
+    }
+
+    .btn-search {
+        width: 40px; /* Smaller button size */
+        height: 40px; /* Smaller button size */
+        font-size: 16px; /* Smaller font size */
+    }
+
+    .input-search::placeholder {
+        font-size: 14px; /* Smaller placeholder text */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Adjust the layout of the tabs header */
+    .tabs-header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Adjust the font size and margin of the heading */
+    .tabs-header h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* Adjust the search box to align to the right */
+    .search-box {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+    }
+
+    /* Adjust the filter buttons to wrap and take full width */
+    .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Adjust the filter buttons to take 45% width and add margin */
+    .filter-buttons button {
+        flex: 1 1 45%;
+        margin: 2px; /* Reduced margin to lessen the gap between buttons */
+    }
+
+    /* Adjust the product grid to be column-based and center-aligned */
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+        gap: 1rem; /* Reduced gap between products */
+    }
+
+    /* Adjust the product item to be row-based and take full width */
+    .product-item {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 1rem; /* Reduced margin to lessen the gap between products */
+    }
+
+    /* Adjust the product image margin */
+    .product-image {
+        margin-left: 10px; /* Reduced margin */
+        margin-top: 0;
+    }
+
+    /* Remove padding from product details */
+    .product-details {
+        padding-right: 0;
+    }
+}
+
+/* Slider Styles */
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    display: none; /* Hide by default */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dots .active {
+    background-color: #333;
+}
+
+/* Media Query for Mobile and Tablet */
+@media (max-width: 1024px) {
+    .slider-container {
+        display: block !important; /* Ensure slider is visible on tablets and mobile devices */
+        margin-top: 120px; /* Add space below the navbar */
+    }
+}
+
+@media (min-width: 1025px) {
+    .slider-container {
+        display: none !important; /* Ensure slider is hidden on desktops */
+    }
+}
+
+/* Add more space between navbar and image slider */
+.slider-container {
+    margin-top: 180px; /* Increased space between navbar and slider */
+    margin-bottom: 10px; /* Keep the space below the slider minimal */
+    border-radius: 10px; /* Keep the rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensure the slider content stays within bounds */
+}
+
+/* Reduce space between product filter and image slider */
+.filter-buttons {
+    margin-top: 5px; /* Adjust this value for less space */
+}
+
+/* Decrease space between "Our Products" and the image slider */
+.tabs-header {
+    margin-top: 10px; /* Reduced space from default (e.g., 20px or more) to 10px */
+}
+
+/* Adjust spacing between navbar and image slider */
+.slider-container {
+    margin-top: 120px; /* Space between navbar and slider */
+    margin-bottom: 5px; /* Reduced space between slider and "Our Products" section */
+}
+
+/* Reduce space between "Our Products" and the image slider */
+.tabs-header {
+    margin-top: 0px; /* Remove extra space between "Our Products" and slider */
+}
+
+/* Reduce space between the image slider and the product search filter */
+.slider-container {
+    margin-top: 50px; /* Space between navbar and slider */
+    margin-bottom: 10px; /* Reduced space between slider and product filter */
+}
+
+/* Adjust the product search filter section */
+.tabs-header {
+    margin-top: 0px; /* Remove extra space above the "Our Products" section */
+    margin-bottom: 10px; /* Add a small gap below the "Our Products" section */
+    padding: 10px 20px; /* Add padding for a cleaner look */
+    background-color: #f8f9fa; /* Light background for better visibility */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Style the filter buttons */
+.filter-buttons {
+    margin-top: 10px; /* Reduced space between filter buttons and the slider */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Add spacing between buttons */
+}
+
+.filter-buttons button {
+    padding: 10px 20px; /* Add padding for better spacing */
+    font-size: 14px; /* Adjust font size */
+    font-weight: 600; /* Make text bold */
+    color: #fff; /* White text color */
+    background-color: #007bff; /* Blue background */
+    border: none; /* Remove border */
+    border-radius: 25px; /* Add rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.filter-buttons button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.filter-buttons button.active {
+    background-color: #ff8400; /* Highlight active button with orange */
+    color: #fff; /* White text for active button */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Add stronger shadow for active button */
+    transform: scale(1.1); /* Slightly enlarge active button */
+}
+
+/* Adjust the search box */
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #fff; /* White background for contrast */
+    border-radius: 25px; /* Rounded corners */
+    padding: 5px 10px; /* Add padding for spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.input-search {
+    height: 40px;
+    width: 200px; /* Adjust width for better usability */
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 0 10px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.input-search:focus {
+    width: 250px; /* Expand width on focus */
+    background-color: #f1f1f1; /* Light background on focus */
+}
+
+.btn-search {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-search:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tabs-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .filter-buttons {
+        gap: 5px; /* Reduce spacing between buttons */
+    }
+
+    .input-search {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+/* Override Bootstrap's padding for the section */
+.py-5 {
+    padding-top: 0.5rem !important; /* Reduced padding above */
+    padding-bottom: 0.5rem !important; /* Reduced padding below */
+}
+
+/* Ensure the slider is visible on mobile and tablet devices */
+.slider-container {
+    display: block !important; /* Force the slider to be visible */
+    margin-top: 40px; /* Space between navbar and slider */
+    margin-bottom: 10px; /* Reduce space between slider and product filter */
+    border-radius: 10px; /* Add rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    overflow: hidden; /* Ensure the slider content stays within bounds */
+}
+
+/* Media Query for Mobile and Tablet */
+@media (max-width: 1024px) {
+    .slider-container {
+        display: block !important; /* Ensure slider is visible on tablets and mobile devices */
+        margin-top: 120px; /* Add space below the navbar */
+    }
+}
+
+@media (min-width: 1025px) {
+    .slider-container {
+        display: none !important; /* Ensure slider is hidden on desktops */
+    }
+}
+
+/* Fix for space caused by utilities.scss */
+.container-fluid {
+    padding: 0 !important; /* Remove padding */
+    margin: 0 !important; /* Remove margin */
+}
+
+.custom-padding {
+    padding-top: 0px; /* Adjust padding above */
+    padding-bottom: 0px; /* Adjust padding below */
+}
+
+.custom-padding-slider {
+    padding-top: 60px; /* Adjust padding above */
+    padding-bottom: 0px; /* Adjust padding below */
+}
+
+/* Desktop-specific styles */
+@media (min-width: 1025px) {
+    /* Enhance the navbar */
+    .nav {
+        height: 100px; /* Increase navbar height */
+        padding: 0 40px; /* Add more padding */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    }
+
+    .nav-logo img.logo {
+        height: 70px; /* Increase logo size */
+    }
+
+    /* Enhance the product grid */
+    .product-grid {
+        gap: 2rem; /* Increase spacing between products */
+        justify-content: center; /* Center-align the grid */
+    }
+
+    .product-item {
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth hover effects */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    .product-item:hover {
+        transform: translateY(-5px); /* Slight lift on hover */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    }
+
+    /* Enhance product details */
+    .product-details h3 {
+        font-size: 20px; /* Larger product title */
+        color: #007bff; /* Highlighted color */
+    }
+
+    .product-details .price {
+        font-size: 24px; /* Larger price font */
+        color: #000; /* Change price text color to black */
+        font-weight: bold;
+    }
+
+    /* Enhance buttons */
+    .add-to-cart {
+        font-size: 16px; /* Larger button text */
+        padding: 10px 20px; /* Add more padding */
+        background-color: #ff8400; /* Highlighted button color */
+    }
+
+    .add-to-cart:hover {
+        background-color: #e67300; /* Darker hover color */
+    }
+
+    /* Enhance the footer */
+    footer {
+        padding: 5rem 2rem; /* Add more padding */
+        background-color: #111; /* Darker background */
+        color: #fff; /* White text */
+    }
+
+    footer .widget-title {
+        font-size: 1.5rem; /* Larger footer titles */
+        color: #ffc43f; /* Highlighted color */
+    }
+
+    footer .menu-list .menu-item a {
+        font-size: 1rem; /* Larger footer links */
+        color: #fff; /* White text */
+    }
+
+    footer .menu-list .menu-item a:hover {
+        color: #ffc43f; /* Highlighted hover color */
+    }
+
+    /* Enhance the slider */
+    .slider-container {
+        margin-top: 120px; /* Add more space below navbar */
+        margin-bottom: 40px; /* Add more space above products */
+        border-radius: 15px; /* Larger rounded corners */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    }
+
+    .slider img {
+        border-radius: 15px; /* Rounded corners for images */
+    }
+
+    /* Enhance filter buttons */
+    .filter-buttons button {
+        font-size: 16px; /* Larger button text */
+        padding: 12px 25px; /* Add more padding */
+        border-radius: 30px; /* Larger rounded corners */
+    }
+
+    .filter-buttons button:hover {
+        transform: scale(1.1); /* Slightly enlarge on hover */
+    }
+
+    .nav-menu {
+        position: static; /* Ensure the menu is visible in desktop view */
+        display: flex; /* Display the menu items inline */
+        flex-direction: row; /* Align items horizontally */
+        justify-content: flex-end; /* Align items to the right */
+        background: none; /* Remove background color */
+        height: auto; /* Adjust height */
+        top: auto; /* Reset top positioning */
+        width: auto; /* Reset width */
+        transition: none; /* Remove transition for desktop */
+    }
+
+    .nav-menu ul {
+        display: flex; /* Align menu items horizontally */
+        gap: 20px; /* Add spacing between menu items */
+    }
+
+    .nav-menu ul li {
+        margin: 0; /* Remove vertical margins */
+    }
+
+    .nav-menu ul li .link {
+        font-size: 1rem; /* Adjust font size */
+        color: #fff; /* White text color */
+        padding: 0; /* Remove padding */
+        transition: color 0.3s ease; /* Smooth hover effect */
+    }
+
+    .nav-menu ul li .link:hover {
+        color: #ffc43f; /* Highlighted color on hover */
+    }
+
+    .nav-menu-btn {
+        display: none; /* Hide the hamburger menu button on desktop */
+    }
+}
+
+/* Hide the hamburger menu on desktop */
+@media (min-width: 1025px) {
+    .nav-menu-btn {
+        display: none; /* Hide the hamburger menu button */
+    }
+}
+
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .whatsapp-float img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
